@@ -1,4 +1,4 @@
-![LOGO](app/assets/images/logo.png)
+
 ## RICHNEWS
 Rich Media Messenger Newsletter
 Built and Released as a Messenger Bot on Facebook Messenger
