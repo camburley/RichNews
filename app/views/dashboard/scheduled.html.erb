@@ -1,0 +1,165 @@
+<%= stylesheet_link_tag "dashboard/scheduled" %>
+
+<div role="tabpanel" class="tab-pane" id="queue">
+    <div class="schedule-list queue-list">
+        <% @newsletters.each do |newsletter| %>
+            <% if Newsletter.find(newsletter.id).story_ids.count > 0 %>
+                <div class="storyline">
+                    <div class="newsletter">
+                        <ul>
+                            <li class="border-space left"></li>
+                            <li class="list-title">
+                                <a class="addEmulator_open" href="#addEmulator">
+                                    <p><%= newsletter.created_at.strftime("%d %b, %Y %H:%M") %></p>
+                                </a>
+                            </li>
+                            <li><p id="story_counter"><%= Story.where(:newsletter_id => newsletter).count %></p> <br /><span id="value_by_story" value="<%= Story.where(:newsletter_id => newsletter).count %>"></span></li>
+                            <li><span class="clock"><i class="fa fa-clock-o" aria-hidden="true"></i></span><span class="clock-text" data-time="<%= newsletter.subscriber_send %>"></span> <br /><span>REMAINING</span></li>
+                            <li class="crud">
+                                <% if newsletter.subscriber_send.to_i > Time.now.to_i %>
+                                    <i newsletter_id="<%= newsletter.id %>" class="fa fa-trash delete-news" aria-hidden="true"></i>
+                                <% end %>
+                                <i class="fa fa-expand expand-news" aria-hidden="true"></i>
+                            </li>
+                            <li class="border-space right"></li>
+                        </ul>
+                    </div>
+                    <div class="stories">
+                        <% Story.where(:newsletter_id => newsletter).each do |story| %>
+                            <div class="story" story-id="<%= story.id %>">
+                                    <div class="main-content">
+        								
+                                        <div class="story-image" id="story-image-1">
+                                            <div class="current-image">
+                                                <img src="<%= story.first_section["second_payload"]["message"]["attachment"]["payload"]["elements"][0]["image_url"] %>">
+                                            </div>
+                                        </div>
+                                        <div class="story-title">
+                                            <p><%= story.first_section["second_payload"]["message"]["attachment"]["payload"]["elements"][0]["title"] %></p>
+                                        </div>
+                                        
+                                        <% if newsletter.subscriber_send.to_i > Time.now.to_i %>
+                                            <div class="remove_edit">
+                                                <% if newsletter.stories.count > 1 %>
+                                                    <p onclick="removeStory(<%= story.id %>, <%= newsletter.id %>)"><i class="fa fa-trash" aria-hidden="true"></i> Remove</p>
+                                                <% end %>
+                                                <p onclick="editStory(<%= story.id %>)"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</p>
+                                            </div>
+                                        <% end %>
+                                        
+                                    </div>
+                            </div>
+                            <div class="edit-story" id="popUp-<%= story.id %>">
+                                <i id="closeEdit" onclick="closeEdit(<%= story.id %>)" class="fa fa-times" aria-hidden="true"></i>
+                                <div class="new-stories-section">
+                                    <div class="content-new">
+                                        <div class="section-1">
+                                            <div class="section-btn">
+                                                <p>Section 1<i id="check-btn" class="fa" aria-hidden="true"></i></p>
+                                            </div>
+                                            <div class="new-story-content">
+                                                <div class="main-content">
+                                                    <div class="story-headline">
+                                                        <h5 id="headline-1" onclick="$(this).editable({ type: 'textarea'});"><%= story.first_section["first_payload"]["message"]["text"] %></h5>
+                    									<!--<a href="javascript:void(0)" class="new-story-headline-btn"><i class="fa fa-trash"></i></a>-->
+                                                    </div>
+                    								
+                                                    <div class="story-image" id="story-image-1">
+                                                        <div class="current-image" id="image-1" onclick="imageOne()">
+                                                            <img src="<%= story.first_section["second_payload"]["message"]["attachment"]["payload"]["elements"][0]["image_url"] %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="story-title">
+                                                        <p id="title-1" onclick="$(this).editable({ type: 'textarea'});"><%= story.first_section["second_payload"]["message"]["attachment"]["payload"]["elements"][0]["title"] %></p>
+                                                    </div>
+                                                    <div class="story-bubble-2-btns">
+                                                        <h5 id="bubble-1" onclick="$(this).editable({ type: 'textarea'});"><%= story.first_section["third_payload"]["message"]["attachment"]["payload"]["text"] %></h5>
+                                                    </div>
+                                                    <div class="btn-1" id="bubble-btn-1" onclick="$(this).editable({ type: 'textarea'});"><%= story.first_section["third_payload"]["message"]["attachment"]["payload"]["buttons"][0]["title"] %></div>
+                                                    <div class="btn-2">
+                                                        <p>Next Story</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="section-2">
+                                            <div class="section-btn">
+                                                <p>Section 2<i id="check-btn" class="fa" aria-hidden="true"></i></p>
+                                            </div>
+                                            <div class="new-story-content">
+                                                <div class="main-content">
+                                                    <div class="story-bubble">
+                                                        <h5 id="bubble-2" onclick="$(this).editable({ type: 'textarea'});"><%= story.second_section["first_payload"]["message"]["text"] %></h5>
+                    									<!--<a href="javascript:void(0)" class="new-story-bubble-btn"><i class="fa fa-trash"></i></a>-->
+                                                    </div>
+                    								
+                                                    <div class="story-image" id="story-image-2">
+                                                        <div class="current-image" id="image-2" onclick="imageTwo()">
+                                                            <img src="<%= story.second_section["second_payload"]["message"]["attachment"]["payload"]["url"] %>">
+                                                        </div>
+                                                        <!--<a href="javascript:void(0)" class="new-story-image-btn"><i class="fa fa-trash"></i></a>-->
+                                                    </div>
+                                                    <div class="story-bubble-2-btns">
+                                                        <h5 id="bubble-3" onclick="$(this).editable({ type: 'textarea'});"><%= story.second_section["third_payload"]["message"]["attachment"]["payload"]["text"] %></h5>
+                                                    </div>
+                                                    <div class="btn-1" id="bubble-btn-2" onclick="$(this).editable({ type: 'textarea'});"><%= story.second_section["third_payload"]["message"]["attachment"]["payload"]["buttons"][0]["title"] %></div>
+                                                    <div class="btn-2">
+                                                        <p>Next Story</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="section-3">
+                                            <div class="section-btn">
+                                                <p>Section 3<i id="check-btn" class="fa" aria-hidden="true"></i></p>
+                                            </div>
+                                            <div class="new-story-content">
+                                                <div class="main-content">
+                                                    <div class="story-bubble-2-btns">
+                                                        <h5 id="bubble-4" id="bubble-4" onclick="$(this).editable({ type: 'textarea'});"><%= story.third_section["first_payload"]["message"]["text"] %></h5>
+                                                    </div>
+                                                    <div class="btn-2">
+                                                        <p>Next Story</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="save-story" newsletter_id="<%= newsletter.id %>" story_id="<%= story.id %>"><i class="fa fa-floppy-o" aria-hidden="true"></i> Update Story</div>
+                                    </div>
+                                <div class="popup-holder">
+                                    <div id="addImg" class="well">
+            
+                                        <div class="add-url">
+                                            <div class="input-group">
+                                                <input type="text" id="image-url-add" class="form-control" placeholder="Add Image URL">
+                                                <div class="input-group-addon"><a href="javascript:void(0)" class="btn addImg_close">Add!</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="addImg_close btn close-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                </div>
+                                
+                                <div class="popup-holder-2">
+                                    <div id="addImg" class="well">
+            
+                                        <div class="add-url">
+                                            <div class="input-group">
+                                                <input type="text" id="image-url-add-2" class="form-control" placeholder="Add Image URL">
+                                                <div class="input-group-addon"><a href="javascript:void(0)" class="btn addImg_close">Add!</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="addImg_close btn close-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<%= javascript_include_tag "dashboard/scheduled"%>
+<%= javascript_include_tag "include/jquery.editable" %>

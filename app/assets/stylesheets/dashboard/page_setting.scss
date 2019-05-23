@@ -1,0 +1,9 @@
+.page_holder { width: 100%; height: 65px; margin: 10px 0; border-bottom: 1px solid #eee;
+
+    .image { width: 10%; float: left; }
+    .details { width: 90%; float: left; 
+        i { color: #ccc; cursor: pointer; float: right; margin: 0 20px; font-size: 30px;}
+            i:hover { color: green; }
+            i.active { color: green; }
+    }
+} 

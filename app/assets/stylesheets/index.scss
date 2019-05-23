@@ -1,0 +1,138 @@
+.home {
+  background-color: #fff;
+  padding-top: 60px;
+}
+
+.home-logo {
+  margin-bottom: 20px;
+  img {
+    width: 100px;
+  }
+}
+
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  color: #4c4e52;
+  margin-bottom: 25px;
+  span {
+    color: #479fff;
+  }
+}
+
+.short-description {
+  color: #777d81;
+  font-size: 22px;
+  text-align: center;
+}
+
+.banner-images {
+  img {
+    max-width: 100%;
+  }
+  margin-top: 50px;
+}
+
+.stickiers {
+  margin-top: 50px;
+}
+
+.banner-section {
+  height: 828px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stickier-section {
+  background-color: #f8f8f8;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.stickier-user-image img {
+  max-width: 110px;
+}
+
+.stickier-user-name {
+  color: #4c4e52;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 20px 0 15px;
+}
+
+.stickier-user-description {
+  color: #777d81;
+  font-size: 18px;
+}
+
+.get-start-button {
+  margin-top: 50px;
+  a {
+    background-color: #276cf2;
+    color: #fff;
+    font-size: 12px;
+    width: 160px;
+    border-radius: 28px;
+    padding: 10px 0;
+    &:hover, &:focus {
+      background-color: #276cf2;
+      color: #fff;
+      font-size: 12px;
+      width: 160px;
+      border-radius: 28px;
+      padding: 10px 0;
+    }
+  }
+}
+
+.like-section {
+  background-color: #222325;
+  padding: 50px 0;
+  .title {
+    color: #e3e3e3;
+    margin-top: 30px;
+  }
+}
+
+.story-description {
+  background-color: #f1f0f0;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  text-align: left;
+  p {
+    padding: 15px;
+  }
+}
+
+.next-story {
+  border: 1px solid #f1f0f0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #fff;
+  text-align: center;
+  a {
+    color: #0088d2;
+    font-size: 16px;
+    &:hover, &:focus {
+      color: #0088d2;
+      font-size: 16px;
+    }
+  }
+}
+
+.reaction {
+  border-bottom: 1px solid #ededed;
+  background-color: #fff;
+  color: #0088d2;
+  font-size: 16px;
+  text-align: center;
+  padding: 12px;
+}
+
+.facebook-massenger-section {
+  background-color: #f9fbfc;
+  padding: 50px 0;
+  .title {
+    margin-bottom: 0;
+  }
+}

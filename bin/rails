@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'rails/commands/server'
+require 'rack'
+require 'webrick'
+require 'webrick/https'
+
+
+  module Rails
+      class Server < ::Rack::Server
+          def default_options
+              super.merge({
+                  :Host => "172.31.1.67",
+                  :Port => 443,
+                  :environment => (ENV['RAILS_ENV'] || "production").dup,
+                  :daemonize => false,
+                  :debugger => false,
+                  :pid => File.expand_path("tmp/pids/server.pid"),
+                  :config => File.expand_path("config.ru"),
+                  :SSLEnable => true,
+                  :SSLVerifyClient => OpenSSL::SSL::VERIFY_NONE,
+                  :SSLPrivateKey => OpenSSL::PKey::RSA.new(
+                                   File.open("/home/ubuntu/voicesbot/certs/voicesai.key").read),
+                  :SSLCertificate => OpenSSL::X509::Certificate.new(
+                                   File.open("/home/ubuntu/voicesbot/certs/voicesai.crt").read),
+                  :SSLCACertificateFile => '/home/ubuntu/voicesbot/certs/gd_bundle-g2-g1.crt',
+                  :SSLCertName => [ [ "CN",WEBrick::Utils::getservername ] ]
+              })
+          end
+      end
+  end
+
+
+APP_PATH = File.expand_path('../../config/application',  __FILE__)
+require_relative '../config/boot'
+require 'rails/commands'

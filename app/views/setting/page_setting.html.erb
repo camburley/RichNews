@@ -1,0 +1,17 @@
+    <%= stylesheet_link_tag "dashboard/page_setting" %>
+    <div class="page_setting">
+        <% if !@pages.nil? %>
+            <% @pages.each do |page| %>
+                <div class="page_holder">
+                    <div class="image">
+                        <%= image_tag(page['picture']['data']['url']) %>
+                    </div>
+                    <div class="details">
+                        <p><%= page['name'] %></p>
+                        <i class="fa fa-check-circle select-btn <%= 'active' if current_user.selected_page == page['id'] %>" aria-hidden="true" page-id="<%= page['id'] %>" page-name="<%= page["name"] %>"></i>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <%= javascript_include_tag "dashboard/page_setting" %>

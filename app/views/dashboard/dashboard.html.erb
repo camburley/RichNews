@@ -1,0 +1,47 @@
+    
+    <%= stylesheet_link_tag "include/morris" %>
+    
+    <div class="box1">
+      <div class="media">
+        <%= image_tag '', class: "media-left head_img" %>
+        <div class="media-body">
+          <h4 class="media-heading"><%= current_user.first_name %> <%= current_user.last_name%></h4>
+          <p class="acc_id">Account ID: <%= current_user.fb_id %> </p>
+          <p><a href="https://m.me/<%= current_user.selected_page %>" class="link">https://m.me/<%= current_user.selected_page %></a></p>
+        </div>
+      </div>
+    </div>
+    <h2>Total Subscribers</h2>
+    <div class="box2">
+      <div class="subscri">
+        <p class="subscri_val"><span class="link"><%= @total_subscribers.count %></span></p>
+      </div>
+      <%= area_chart User.with_role(:subscriber, Page.find_by_page_id(current_user.selected_page)).group_by_day("users.created_at").count %>
+    </div>
+    <div class="row box3">
+      <div class="col-md-4">
+        <div class="box3_sub"> <span class="value_text"><%= @total_subscribers.count %></span> <span class="type_text">Total Subscribers</span> </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box3_sub"> <span class="value_text"><%= @new_subscribers.count %></span> <span class="type_text">New Subscribers</span> </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box3_sub"> <span class="value_text"><%= @total_haters.count %></span> <span class="type_text">Unsubscribes</span> </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box3_sub"> <span class="value_text"><%= @total_stories %></span> <span class="type_text">Stories Sent</span> </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box3_sub"> <span class="value_text"><%= @total_clicks %></span> <span class="type_text">Click</span> </div>
+      </div>
+    </div>
+    
+    <%= link_to 'Log Out', signout_path %>
+    
+    <%= javascript_include_tag "include/stupidtable.min" %>
+    <%= javascript_include_tag "include/owl.carousel.min" %>
+    <%= javascript_include_tag "include/jquery.schedule-popupoverlay" %>
+    <%= javascript_include_tag "include/jquery.editable" %>
+    <%= javascript_include_tag "include/zebra_datepicker" %>
+    <%= javascript_include_tag "include/icheck" %>
+    <%= javascript_include_tag "include/custom" %>

@@ -1,0 +1,428 @@
+/* line 17, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+body {
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+  font-family: Proxima Nova Regular;
+  min-width: 320px;
+  margin: 0;
+  height: 100vh;
+}
+
+/* line 25, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* line 28, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* line 32, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #7f8c8d;
+}
+/* line 36, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #7f8c8d;
+}
+
+/* line 40, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.main {
+  width: 100%;
+  height: 100vh;
+  background: url(/assets/bg-ts-42733dcb4dfc52aa309a528dd67040007a7ec5973a1dbf91deb3606320e8cb0e.jpg) no-repeat fixed center;
+  background-size: cover;
+}
+
+/* line 46, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 51, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.header {
+  padding: 20px;
+  height: 30px;
+}
+
+/* line 55, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.logo {
+  height: 30px;
+  float: left;
+}
+/* line 58, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.logo img {
+  height: 100%;
+}
+
+/* line 62, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.content {
+  margin-top: 25vh;
+  padding: 0 150px;
+}
+
+/* line 66, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.text {
+  width: 65%;
+  margin: 0;
+  display: inline-block;
+}
+/* line 70, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.text h1 {
+  color: #fff;
+  font-size: 52px;
+  margin-top: 0;
+}
+/* line 75, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.text p {
+  color: #fff;
+  font-size: 22px;
+}
+
+/* line 80, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.video-btn {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin-top: 20px;
+}
+/* line 86, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.video-btn i {
+  font-size: 42px;
+  color: #fff;
+  background: rgba(35, 35, 35, 0.7);
+  padding: 44px 44px 44px 50px;
+  border-radius: 100px;
+}
+/* line 93, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.video-btn i:hover {
+  color: #3498db;
+}
+
+/* line 98, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.menu {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* line 104, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.menu-holder {
+  text-align: center;
+}
+/* line 106, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.menu-holder li {
+  display: inline;
+  text-decoration: none;
+  padding: 10px 8%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* line 114, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.menu-holder li:hover {
+  border-bottom: 5px solid #3498db;
+}
+/* line 117, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.menu-holder li i {
+  padding: 0 10px;
+}
+
+/* line 122, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.active {
+  border-bottom: 5px solid #3498db;
+}
+
+/* line 125, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.open-menu {
+  height: 90vh;
+  width: 100%;
+  display: none;
+}
+
+/* line 130, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.scroll {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+/* line 135, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.scroll i {
+  font-size: 42px;
+  color: #555;
+  margin: 0;
+}
+
+/* line 141, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.how-it-works {
+  display: none;
+}
+
+/* line 144, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.about-us {
+  display: none;
+}
+
+/* line 147, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.price {
+  display: none;
+}
+
+/* line 150, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.steps {
+  margin-top: 50px;
+}
+
+/* line 153, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.holder {
+  width: 60%;
+}
+
+/* line 156, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.explenation {
+  padding: 50px;
+}
+/* line 158, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.explenation h1 {
+  margin: 0;
+  padding: 30px;
+  color: #555;
+}
+
+/* line 164, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.step1 {
+  margin-top: 50px;
+  display: none;
+}
+
+/* line 168, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.step2 {
+  margin-top: 50px;
+  display: none;
+}
+
+/* line 172, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.step3 {
+  margin-top: 50px;
+  display: none;
+}
+
+/* line 176, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.icon {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+/* line 181, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.icon i {
+  font-size: 112px;
+  color: #555;
+}
+
+/* line 186, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.content-text {
+  width: 65%;
+  display: inline-block;
+  vertical-align: middle;
+  vertical-align: bottom;
+}
+/* line 191, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.content-text h3 {
+  margin: 5px;
+  color: #2980b9;
+}
+/* line 195, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.content-text p {
+  margin: 5px;
+  color: #555;
+}
+
+/* line 200, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.shape {
+  float: right;
+  height: 90vh;
+  width: 40%;
+  background-image: url(/assets/shape-how-cd22cbe93df584944aa8056f03379438a8d3e1950cc8c4470df5014f814a9854.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 207, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.shape img {
+  height: 100%;
+  float: right;
+}
+
+@media (max-width: 961px) {
+  /* line 213, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  p {
+    font-size: 14px;
+  }
+
+  /* line 216, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .content {
+    padding: 0 100px;
+    margin-top: 15vh;
+  }
+
+  /* line 220, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .explenation {
+    padding: 20px;
+  }
+  /* line 222, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .explenation h1 {
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  /* line 227, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .steps {
+    margin-top: 20px;
+  }
+
+  /* line 230, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .step1 {
+    margin-top: 20px;
+  }
+
+  /* line 233, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .step2 {
+    margin-top: 20px;
+  }
+
+  /* line 236, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .step3 {
+    margin-top: 20px;
+  }
+
+  /* line 239, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .menu-holder li {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* line 243, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .icon i {
+    font-size: 82px;
+  }
+
+  /* line 246, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .content-text p {
+    padding-right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 251, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .shape {
+    display: none;
+  }
+
+  /* line 254, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .holder {
+    width: 100%;
+  }
+
+  /* line 257, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .content {
+    padding: 0 50px;
+  }
+
+  /* line 261, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .text h1 {
+    font-size: 24px;
+  }
+  /* line 264, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .text p {
+    font-size: 16px;
+  }
+
+  /* line 268, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .video-btn {
+    margin-top: 5px;
+  }
+  /* line 270, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .video-btn i {
+    padding: 34px 34px 34px 40px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 414px) {
+  /* line 277, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .logo {
+    height: 19px;
+  }
+
+  /* line 280, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .content {
+    padding: 0 25px;
+  }
+
+  /* line 283, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .get-started p {
+    padding: 0 40px;
+  }
+
+  /* line 286, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .icon i {
+    font-size: 62px;
+  }
+
+  /* line 289, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .video-btn i {
+    padding: 24px 24px 24px 30px;
+    font-size: 22px;
+    float: right;
+  }
+
+  /* line 294, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .menu-holder li {
+    padding: 5px;
+    font-size: 15px;
+  }
+
+  /* line 298, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .explenation h1 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 320px) {
+  /* line 303, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .logo {
+    height: 15px;
+  }
+
+  /* line 306, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .get-started p {
+    padding: 0 30px;
+  }
+
+  /* line 309, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .menu-holder li {
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  /* line 313, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+  .text h1 {
+    font-size: 22px;
+  }
+}
+/* line 317, /home/ubuntu/voicesbot/app/assets/stylesheets/index.scss */
+.get-started p {
+  float: right;
+  margin: 0;
+  padding: 5px 50px;
+  background-color: #2980b9;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 50px;
+}

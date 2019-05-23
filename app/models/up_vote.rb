@@ -1,0 +1,4 @@
+class UpVote < ActiveRecord::Base
+    belongs_to :voteable
+    belongs_to :user
+end

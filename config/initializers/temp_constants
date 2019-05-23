@@ -1,0 +1,4 @@
+brand1 = Brand.new(:name => "Voices")
+brand1.save
+pub1 = Publisher.new(:brand_id => 1, :first_name => "Cameron", :last_name => "Burley", :page_id => "1818311588402974", :page_token => "EAAIgubodSD4BAGjyR4exd6PTSZC63sIBWPaZBl2R320oKHPNlL3ZAZBnqelv38hUKFZCpcUTzj6pmqfY79cZCvLZCZAFSOpSYR2NCakzMOY6gFBCmj71wqGIDeMDqwjULZC5phMiqn1pIb2LSGzP8kgiJJZBzZAZBj7Bnvt68d3kKP3X4gZDZD")
+pub1.save

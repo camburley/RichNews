@@ -1,0 +1,48 @@
+    <div class="welcome-section editor-section">
+        <div class="mobile-emulator">
+            <div class="top-image">
+                <%= image_tag "dashboard/mobile-emulator" %>
+            </div>
+        	<div class="space"></div>
+            <div class="new-stories-section">
+                <div class="new-story-content">
+                    <div class="main-content">
+                        <div class="story-headline-pra">
+                            <h5>
+                                Hey, thanks for stopping by
+                            </h5>
+                        </div>
+        				<div class="story-short-description-pra">
+        					<p>Every morning, I’ll send you a “Vice Edition” so your can start your day with short stories</p>
+        				</div>
+                        <div class="story-description">
+                            <p>
+                                Here’s the summary. At 320 characters, it’s the perfect length for someone to read comfortably on their phone.
+                            </p>
+                        </div>
+        				<div class="welcome-sweet-story"><a href="javascript:void(0)" class="btn sweet-button">Sweet! What’s Next?</a></div>
+        				<div class="welcome-story"><a href="javascript:void(0)" class="btn no-thanks-button">No, thanks</a></div>
+                    </div>
+        			<div class="welcome-save-button">
+            			<%= form_for setting_welcome_message_path, method: :post do %>
+            				<%= submit_tag "Yes!", class: "btn" %>
+            			<% end %>
+        			</div>
+                </div>
+                
+            </div>
+        </div>
+				
+		<div class="welcome-message">
+			<h2>Welcome Message</h2>
+			<p>Here you can set up a Welcome Message to greet your subscribers. Click directly into the bubbles to edit the text. Only users who click “yes” become subscribers – so make it engaging!</p>
+		</div>
+	</div>
+	
+	<%= javascript_include_tag "include/stupidtable.min" %>
+    <%= javascript_include_tag "include/owl.carousel.min" %>
+    <%= javascript_include_tag "include/jquery.schedule-popupoverlay" %>
+    <%= javascript_include_tag "include/jquery.editable" %>
+    <%= javascript_include_tag "include/zebra_datepicker" %>
+    <%= javascript_include_tag "include/icheck" %>
+    <%= javascript_include_tag "include/custom" %>

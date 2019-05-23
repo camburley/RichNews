@@ -1,0 +1,27 @@
+/* Let's get this party started */
+/* line 3, /home/ubuntu/voicesbot/app/assets/stylesheets/dashboard/growth_tool.scss */
+::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* line 7, /home/ubuntu/voicesbot/app/assets/stylesheets/dashboard/growth_tool.scss */
+xmp {
+  padding: 10px;
+  border: none;
+  background: #e9eced;
+  border-radius: 4px;
+  color: #808ea2;
+  margin: 5px 0;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+/* line 19, /home/ubuntu/voicesbot/app/assets/stylesheets/dashboard/growth_tool.scss */
+.fb-messengermessageus {
+  width: 150px;
+}
+
+/* line 23, /home/ubuntu/voicesbot/app/assets/stylesheets/dashboard/growth_tool.scss */
+.fb_button {
+  padding: 10px 0;
+}
